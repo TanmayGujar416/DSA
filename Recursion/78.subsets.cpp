@@ -12,7 +12,6 @@ public:
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<vector<int>> ans;
         vector<int> ds;
-        int i = 0;
         int n = nums.size();
         f(0, nums, ds, n, ans);
         return ans;
