@@ -1,1 +1,8 @@
+# Compiled binaries
+*.exe
+
+# VS Code
 .vscode/
+
+# Temporary files
+tempCodeRunnerFile.cpp
