@@ -1,6 +1,5 @@
 # 📚 DSA Practice Repository
 
-![Language](https://img.shields.io/badge/C%2B%2B-17-blue)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 This repository documents my journey of learning Data Structures and Algorithms in C++. It contains solutions organized by topic, primarily following the Striver A2Z DSA roadmap and LeetCode problems, serving as both a practice log and a quick reference for common algorithms and patterns.
