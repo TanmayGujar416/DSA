@@ -1,3 +1,19 @@
+/*
+Approach:
+1. Traverse the infix expression from left to right.
+2. If the character is an operand, append it to the postfix string.
+3. If it is '(', push it onto the stack.
+4. If it is ')', pop and append operators until '(' is found, then remove '('.
+5. If it is an operator, pop operators with higher (or equal for left-associative operators)
+   precedence from the stack, append them to the answer, then push the current operator.
+6. After traversal, pop all remaining operators from the stack and append them.
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+*/
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
