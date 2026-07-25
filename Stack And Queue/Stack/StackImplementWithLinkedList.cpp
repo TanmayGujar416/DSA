@@ -35,7 +35,7 @@ class Stack{
         top = top->next;
         delete temp;
     }
-}
+    }
 
     void push(int x){
       Node* newNode = new Node(x, top);
