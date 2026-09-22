@@ -20,14 +20,28 @@ bool detect(int src, vector<int>& vis, vector<vector<int>>& adj){
     }
     return false;
   }
+}
 
+bool dfs(int node, int parent, vector<int>& vis, vector<vector<int>>& adj){
+  vis[node] = 1;
+  for(auto neighbor: adj[node])
+  {
+    if(!vis[neighbor])
+    {
+      if(dfs(neighbor, node, vis, adj)) return true;
+    }
+    else if(neighbor!= parent){
+      return true;
+    }
+  }
+  return false;
 }
 bool iscycle(int V, vector<vector<int>>& adj){
   vector<int> vis(V, 0);
 
   for(int i = 0; i < V; i++){
     if(!vis[i]){
-      if(detect(i, vis, adj)){
+      if(dfs(i, -1, vis, adj)){
         return true;
       }
     }

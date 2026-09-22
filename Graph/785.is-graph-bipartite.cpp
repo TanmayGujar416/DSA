@@ -42,6 +42,23 @@ public:
         }
         return true;
     }
+
+    bool dfs(int node,  vector<vector<int>>& graph, vector<int>& vis, int color){
+        if(color == 1) vis[node] = 2;
+        else  vis[node] = 1;
+        for(auto neighbor : graph[node]){
+            if(vis[neighbor] == 0){
+                if(!dfs(neighbor, graph, vis, vis[node])){
+                    return false;
+                }
+            }
+            else if(vis[neighbor] == vis[node]){
+                return false;
+            }
+        }
+        return true;
+    }
+
     bool isBipartite(vector<vector<int>>& graph)
     {
         vector<int> vis(graph.size(),0);
@@ -50,7 +67,7 @@ public:
         {
             if(vis[i] == 0)
             {
-                if(!bfs(i,graph,vis))
+                if(!dfs(i,graph,vis,0))
                 {
                     return false;
                 }
